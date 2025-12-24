@@ -1,0 +1,107 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #FEC417);
+}
+
+.row-field{
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+
+.field{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.field label{
+  font-size: 1rem;
+  
+  color: #555;
+}
+
+.field input{
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+    background-color: #1a1a1a;
+
+}
+
+.field input:focus{
+  border-color: #FEC417;
+  box-shadow: 0 0 0 2px rgba(244, 196, 23, 0.3);
+}
+
+.divider{
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    #FEC417,
+    transparent
+  );
+  margin: 2rem 0;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.nav{
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.nav a{
+  color: #FEC417;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.admin-button{
+  width: 160px;
+  padding: 0.4em 0.8em;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px colid #ccc;
+
+}
+
+ .admin-input{
+  width: 150px;
+  padding: 0.4em 0.8em;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  outline: none;
+  background-color: #1a1a1a;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 1rem;
+ }
+
+ .admin-input:focus{
+  border-color: #FEC417;
+  box-shadow: 0 0 0 2px rgba(244, 196, 23, 0.3);
+ }
