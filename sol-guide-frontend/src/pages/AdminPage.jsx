@@ -91,6 +91,7 @@ return (
     </ul>
 </div>
 
+
 <div style={{ flex:1, paddingLEft: "1rem"}}>
     <h2>Ta bort restaurang</h2>
     <input className="admin-input" placeholder="ID" value={deleteId} onChange={e => setDeleteId(e.target.value)} />
@@ -99,6 +100,7 @@ return (
 
 
 </div>
+
 )
 }
 
