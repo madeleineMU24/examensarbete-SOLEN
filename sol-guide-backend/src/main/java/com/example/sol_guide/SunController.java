@@ -5,6 +5,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -17,12 +18,13 @@ import java.util.List;
 @RestController
 public class SunController {
 
-    SunService sunService;
+    private final SunService sunService;
 
     public SunController(SunService sunService){
         this.sunService = sunService;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping
     public ResponseEntity<Restaurant> createRestaurant (@Valid @RequestBody Restaurant restaurant) {
         Restaurant result = sunService.createRestaurant(restaurant);
@@ -61,6 +63,7 @@ public class SunController {
         return sunService.findRestaurantById(id).orElseThrow(() -> new EntityNotFoundException("No restaurant with id: " + id));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRestaurantById(@PathVariable Long id){
         sunService.deleteRestaurantById(id);

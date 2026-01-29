@@ -89,6 +89,19 @@ ul{
 
 }
 
+.nav-link {
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-size: 0.9rem;
+
+}
+
+.nav-link:hover{
+  color: #FEC417;
+}
+
 
  .admin-input{
   width: 150px;

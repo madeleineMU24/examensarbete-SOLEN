@@ -1,5 +1,8 @@
 import {useEffect, useState} from 'react'
 
+import { getToken, logout } from '../services/authService'
+import { useNavigate } from 'react-router-dom'
+
 
 function AdminPage(){
 
@@ -12,12 +15,32 @@ const [deckWidth, setDeckWidth] = useState("")
 const [hasSun, setHasSun] = useState("")
 const [deleteId, setDeleteId] = useState("")
 
+const navigate = useNavigate();
+
+
 
 useEffect(() => {
-    fetch("http://localhost:8080/restaurant")
-    .then((res) => res.json())
-    .then((data) => setRestaurants(data))
-    .catch((err) => console.error(err))
+    const fetchRestaurants = async () => {
+        try {
+            const token = getToken();
+
+            const response = await fetch ("http://localhost:8080/restaurant", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            if (!response.ok) {
+                throw new Error ("Inte behörig");
+            }
+            const data = await response.json();
+            setRestaurants(data);
+        }catch (err){
+            console.error(err);
+            alert("Du är inte inloggad eller saknar behörighet");
+            navigate("/login")
+        }
+    };
+    fetchRestaurants();
 }, []);
 
 const addRestaurant = async () => {
@@ -27,19 +50,30 @@ const addRestaurant = async () => {
         hasSun: false
     };
 try {
-    const res = await fetch("http://localhost:8080/restaurant", {
+    const token = getToken();
+
+    if(!token){
+        alert("Du är inte inloggad");
+        navigate("/login")
+        return;
+    }
+
+    const response = await fetch("http://localhost:8080/restaurant", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`,},
         body: JSON.stringify(newRestaurang)
     });
 
-    if (res.ok){
-        const added = await res.json();
+    if (response.ok){
+        const added = await response.json();
         setRestaurants(prev => [...prev, added]);
         setName(""), setLatitude(""), setLongitude(""), setDeckDirection(""), setDeckWidth("");
         alert(`Restaurangen  "${added.name}" har lagt till`);
-    } else {
-        const err = await res.text();
+    } else if (response.status === 401 || response.status === 403){
+        alert ("Du är inte inloggad eller saknar behörighet");
+        navigate ("/login");
+    } else{
+        const err = await response.text();
         alert(`Något gick fel: ${err}`)
     }
 } catch (error){
@@ -50,14 +84,28 @@ try {
 
 const deleteRestaurant = async () => {
     try {
-    const res = await fetch(`http://localhost:8080/restaurant/${deleteId}`, 
-        {method: "DELETE" });
-        if (res.ok) {
+    const token = getToken();
+
+    if (!token){
+        alert ("Du är inte inloggad")
+        navigate("/login")
+        return;
+    }
+
+    const response = await fetch(`http://localhost:8080/restaurant/${deleteId}`, 
+        {method: "DELETE",
+            headers: {Authorization: `Bearer ${token}`,
+        },
+         });
+        if (response.ok) {
             setRestaurants(restaurants.filter((r) => r.id !== parseInt(deleteId)));
             alert(`Restaurangen med i "${deleteId}" har tagits bort`);
             setDeleteId("");
+        } else if (response.status === 401 || response.status === 403) {
+            alert ("Du är inte inloggad eller saknar behörighet");
+            navigate("/login");
         } else {
-            const err = await res.text();
+            const err = await response.text();
             alert (`Något fick fel: ${err}`)
         }
             }catch (error){
@@ -102,6 +150,7 @@ return (
 </div>
 
 )
-}
 
+
+}
 export default AdminPage
