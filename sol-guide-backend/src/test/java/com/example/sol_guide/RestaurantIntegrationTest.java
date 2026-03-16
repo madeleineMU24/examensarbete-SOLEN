@@ -1,5 +1,7 @@
-/*package com.example.sol_guide;
+package com.example.sol_guide;
 
+import com.example.sol_guide.model.Restaurant;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,6 +16,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 
 
+@Disabled ("inte klart")
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebClient
@@ -29,7 +32,7 @@ public class RestaurantIntegrationTest {
     @Test
     public void testCreateRestaurant(){
 
-        Restaurant restaurant = new Restaurant(null, "test", 50.0, 60.0, 180,180);
+        Restaurant restaurant = new Restaurant(1L, "test", 50.0, 60.0, 180,180, true);
 
 
         webTestClient.post()
@@ -44,4 +47,4 @@ public class RestaurantIntegrationTest {
     }
 
 
-}*/
+}
