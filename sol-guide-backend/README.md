@@ -1,8 +1,5 @@
-# **Examensarbete SÖLEN**
+### SÖLEN - Backend
 *Sol-guide för uteserveringen*
-
----
-## Backend
 
 ---
 ### Beskrivning
@@ -19,23 +16,23 @@ Eftersom projektet fortfarande befinner sig i en betafas tas i nuläget inte hä
 kan skapa skuggor.
 ---
 
-### Teknik
+**Teknik**<br>
 
 - Java
-- SpringBoot
+- Spring Boot
 - REST API
 - Maven
-- JWT (JSON Web Token), autentisering och skydd av admin.funktioner
+- JWT (JSON Web Token) för autentisering och skydd av admin-funktioner
 
 ---
-### Starta projektet
+**Starta projektet**<br>
 
-**Krav**
+*Krav*
 - Java 17
 - Maven
 - MySQL
 
-### Databas
+**Databas**
 
 Projektet använder MySQL för lagring av data. Backend kommunicerar med databasen via Spring Boot.
 
@@ -44,25 +41,25 @@ Databasanslutningen konfigureras i:
 [application.properties](src/main/resources/application.properties)
 
 I konfigurationen används miljövariabler för databasuppgifter:
-````
+```
 spring.datasource.url=${DB_URL}
 spring.datasource.username=${DB_USERNAME}
 spring.datasource.password=${DB_PASSWORD}
-````
+```
 
 För att köra projektet behöver följande miljövariabler sättas lokalt:
-````
+```
 DB_URL
 DB_USERNAME
 DB_PASSWORD
-````
+```
 
 **Kör projektet:** öppna [SolGuideApplication](src/main/java/com/example/sol_guide/SolGuideApplication.java)
 och kör `main()`-metoden
 
 ---
 
-### Exempel på endpoints:
+**Exempel på endpoints:**
 
 | COMMAND | ENDPOINTS         | OPERATIONER                      | EXTRA                       |
 |---------|-------------------|----------------------------------|-----------------------------|
@@ -72,21 +69,20 @@ och kör `main()`-metoden
 | GET     | /restaurant/sunny | Hämtar restauranger med sol      | Välj att inkludera skuggiga |
 | GET     | /restaurant/{id}  | Hämtar restaurang med valt id    | -                           |
 | DELETE  | /restaurant/{id}  | Radera restaurang med valt id    | Kräver "ADMIN"              |
+| POST    | /auth/login       | Genererar JWT-token för admin    | -                           |
 
-
-| COMMAND | ENDPOINTS   | OPERATIONER                   | EXTRA |
-|---------|-------------|-------------------------------|-------|
-| POST    | /auth/login | Genererar JWT-token för admin | -     |
-
-
-### Projektstruktur
+---
+**Projektstruktur**
 ````
 src/
-   └─ main
-        ├─ controller
-        ├─ service
-        ├─ repository
-        ├─ model
-        ├─ security
-        └─ utils
+└─ main
+   ├─ java/com/example/sol_guide/    
+   │       ├─ controller/
+   │       ├─ service/
+   │       ├─ repository/
+   │       ├─ model/
+   │       ├─ security/
+   │       └─ utils/
+   └─ resources/
+        └─ application.properties
 ````
