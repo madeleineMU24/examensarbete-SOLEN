@@ -1,4 +1,4 @@
-name: Guest workflow
+name: sol-guide workflow
 on: [push, pull_request]
 
 jobs:
