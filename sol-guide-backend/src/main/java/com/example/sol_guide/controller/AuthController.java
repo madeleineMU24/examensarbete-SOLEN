@@ -1,5 +1,8 @@
-package com.example.sol_guide;
+package com.example.sol_guide.controller;
 
+import com.example.sol_guide.service.AuthService;
+import com.example.sol_guide.model.LoginRequest;
+import com.example.sol_guide.model.TokenResponse;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

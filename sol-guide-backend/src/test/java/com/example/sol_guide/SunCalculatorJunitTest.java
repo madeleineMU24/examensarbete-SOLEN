@@ -1,6 +1,8 @@
 package com.example.sol_guide;
 
 
+import com.example.sol_guide.model.Restaurant;
+import com.example.sol_guide.util.SunCalculator;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;

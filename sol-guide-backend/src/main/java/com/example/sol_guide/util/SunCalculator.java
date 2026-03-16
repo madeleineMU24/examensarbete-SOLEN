@@ -1,5 +1,6 @@
-package com.example.sol_guide;
+package com.example.sol_guide.util;
 
+import com.example.sol_guide.model.Restaurant;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;

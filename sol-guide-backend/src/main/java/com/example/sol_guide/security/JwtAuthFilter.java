@@ -1,5 +1,6 @@
-package com.example.sol_guide;
+package com.example.sol_guide.security;
 
+import com.example.sol_guide.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

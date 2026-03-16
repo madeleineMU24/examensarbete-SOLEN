@@ -1,5 +1,8 @@
-package com.example.sol_guide;
+package com.example.sol_guide.service;
 
+import com.example.sol_guide.model.Restaurant;
+import com.example.sol_guide.util.SunCalculator;
+import com.example.sol_guide.repository.SunRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
