@@ -1,4 +1,4 @@
-# **Examensarbete SÖLEN**
+## **Examensarbete SÖLEN**
 *Sol-guide för uteserveringen*
 
 ---
