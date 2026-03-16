@@ -1,6 +1,8 @@
 # **Examensarbete SÖLEN**
 *Sol-guide för uteserveringen*
 
+---
+
 ### Frontend Beskrivning
 Frontend-delen av **Sölen** utgör applikationens användargränssnitt och gör det möjligt för användaren att interagera med systemet.
 
