@@ -1,4 +1,4 @@
-### Examensarbete SÖLEN<br>
+### SÖLEN - Frontend
 *Sol-guide för uteserveringen*
 
 ---
@@ -28,23 +28,23 @@ eller se om solen når platsen i realtid. Informationen presenteras på ett enke
 - Node.js 
 
 **Starta med att skriva:**
-``````
+```
 1. npm install
 2. npm run dev
-``````
+```
 
 **Applikationen startar då på:**
-
 http://localhost:5173
 
 ----
 
 **Admin**<br>
 
-För att kunna göra admin måste du logga in
+För att testa admin-funktioner måste du logga in. Det gör du genom att klicka på logga in och sedan använda nedanstående
+uppgifter:
 
 <details>
-<summary>Admin-inloggning (Klicka här för att visa)</summary>
+<summary>Admin-uppgifter (Klicka här för att visa)</summary>
 
 **Användarnamn:** `admin`
 **Lösenord:** `password`
