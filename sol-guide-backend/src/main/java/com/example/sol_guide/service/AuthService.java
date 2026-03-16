@@ -1,6 +1,8 @@
-package com.example.sol_guide;
+package com.example.sol_guide.service;
 
 
+import com.example.sol_guide.model.LoginRequest;
+import com.example.sol_guide.model.TokenResponse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

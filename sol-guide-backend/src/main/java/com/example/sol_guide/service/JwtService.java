@@ -1,4 +1,4 @@
-package com.example.sol_guide;
+package com.example.sol_guide.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

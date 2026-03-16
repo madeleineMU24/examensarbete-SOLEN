@@ -1,4 +1,4 @@
-package com.example.sol_guide;
+package com.example.sol_guide.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

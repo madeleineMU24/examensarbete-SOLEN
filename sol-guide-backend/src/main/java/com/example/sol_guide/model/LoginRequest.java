@@ -1,4 +1,4 @@
-package com.example.sol_guide;
+package com.example.sol_guide.model;
 
 public class LoginRequest {
 

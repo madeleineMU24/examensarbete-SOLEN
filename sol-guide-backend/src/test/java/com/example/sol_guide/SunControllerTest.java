@@ -2,6 +2,8 @@ package com.example.sol_guide;
 
 
 
+import com.example.sol_guide.model.Restaurant;
+import com.example.sol_guide.service.SunService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,7 +29,6 @@ public class SunControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
-
 
     @MockitoBean
     private SunService sunService;

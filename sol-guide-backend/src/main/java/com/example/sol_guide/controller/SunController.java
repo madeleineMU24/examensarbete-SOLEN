@@ -1,6 +1,8 @@
-package com.example.sol_guide;
+package com.example.sol_guide.controller;
 
 
+import com.example.sol_guide.model.Restaurant;
+import com.example.sol_guide.service.SunService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

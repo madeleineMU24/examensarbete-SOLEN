@@ -1,4 +1,4 @@
-package com.example.sol_guide;
+package com.example.sol_guide.util;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
