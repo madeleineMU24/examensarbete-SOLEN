@@ -1,9 +1,9 @@
-## **Examensarbete SÖLEN**
+### Examensarbete SÖLEN<br>
 *Sol-guide för uteserveringen*
 
 ---
 
-### Frontend Beskrivning
+**Beskrivning**<br>
 Frontend-delen av **Sölen** utgör applikationens användargränssnitt och gör det möjligt för användaren att interagera med systemet.
 
 Gränssnittet är utvecklat med JavaScript och React, med Node.js som utvecklingsmiljö. Frontend kommunicerar med backend 
@@ -14,16 +14,16 @@ eller se om solen når platsen i realtid. Informationen presenteras på ett enke
 
 ---
 
-### Teknik
+**Teknik**<br>
 
 - JavaScript
 - React
 - Node.js
 
 ---
-### Starta projektet
+**Starta projektet**<br>
 
-**Krav**
+*Krav*
 
 - Node.js 
 
@@ -39,7 +39,7 @@ http://localhost:5173
 
 ----
 
-### Admin
+**Admin**<br>
 
 För att kunna göra admin måste du logga in
 
