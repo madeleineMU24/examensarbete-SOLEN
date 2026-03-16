@@ -1,4 +1,4 @@
-name: sol-guide workflow
+name: backend workflow
 on: [push, pull_request]
 
 jobs:
@@ -42,6 +42,7 @@ jobs:
           done
       - name: Build and test
         run: mvn clean verify
+        working-directory: sol-guide-backend
 
 
   on-pull_request-action:
@@ -84,3 +85,4 @@ jobs:
           done
       - name: Build and test
         run: mvn clean verify
+        working-directory: sol-guide-backend
