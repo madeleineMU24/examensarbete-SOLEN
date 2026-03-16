@@ -1,5 +1,5 @@
-# Examensarbete SÖLEN
-### Sol-guide för uteserveringen
+# **Examensarbete SÖLEN**
+*Sol-guide för uteserveringen*
 
 ---
 ## Frontend
