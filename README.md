@@ -51,7 +51,7 @@ Examensarbete
 Se [backend-README](sol-guide-backend/README.md)<br>
 
 *3. Starta frontend*<br>
-Se [frontend-README.md](sol-guide-frontend/README.md)
+Se [frontend-README](sol-guide-frontend/README.md)
 
 ---
 
