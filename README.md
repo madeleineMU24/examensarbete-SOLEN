@@ -17,7 +17,9 @@ objekt som kan skapa skugga tas ännu inte med i beräkningen, vilket innebär a
 
 Projektet består av en backend som hanterar beräkningar och API-kommunikation, samt en frontend som presenterar 
 informationen i ett användarvänligt gränssnitt.
+
 ----
+
 **Projektstuktur**
 ```
 Examensarbete
@@ -26,6 +28,7 @@ Examensarbete
 ```
 
 ----
+
 **Tekniker**
 
 | Backend             | Frontend     |
@@ -37,6 +40,7 @@ Examensarbete
 | • JWT-autentisering | • CSS        |
 
 ----
+
 **Installation**
 
 *1. Klona projektet*
