@@ -2,7 +2,7 @@
 *Sol-guide för uteserveringen*
 
 ---
-### Beskrivning
+**Beskrivning**<br>
 Backend-delen av Sölen ansvarar för logiken bakom applikationen, inklusive beräkning av solens position och hantering av
 API-förfrågningar från frontend.
 
@@ -14,6 +14,7 @@ specifik plats vid ett visst klockslag.
 
 Eftersom projektet fortfarande befinner sig i en betafas tas i nuläget inte hänsyn till byggnader eller andra objekt som
 kan skapa skuggor.
+
 ---
 
 **Teknik**<br>
