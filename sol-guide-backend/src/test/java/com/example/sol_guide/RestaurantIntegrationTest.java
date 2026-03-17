@@ -1,48 +1,60 @@
 package com.example.sol_guide;
 
+
 import com.example.sol_guide.model.Restaurant;
-import org.junit.jupiter.api.Disabled;
+
+import com.example.sol_guide.security.SecurityConfig;
 import org.junit.jupiter.api.Test;
+
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.boot.webclient.test.autoconfigure.AutoConfigureWebClient;
-
-import org.springframework.test.web.reactive.server.WebTestClient;
-
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
-
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.web.servlet.MockMvc;
 
+import org.springframework.security.test.context.support.WithMockUser;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 
-@Disabled ("inte klart")
+import org.springframework.http.MediaType;
+
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureWebClient
+@AutoConfigureMockMvc
+@Import(TestSecurityConfig.class)
 public class RestaurantIntegrationTest {
 
-    @LocalServerPort
-    private int port;
-
     @Autowired
-    private WebTestClient webTestClient;
+    MockMvc mockMvc;
 
 
     @Test
-    public void testCreateRestaurant(){
+    public void testCreateRestaurant() throws Exception{
 
         Restaurant restaurant = new Restaurant(1L, "test", 50.0, 60.0, 180,180, true);
 
 
-        webTestClient.post()
-                        .uri("/restaurant")
-                        .bodyValue(restaurant)
-                        .exchange()
-                        .expectStatus().isCreated()
-                        .expectBody()
-                        .jsonPath("$.name").isEqualTo("test")
-                        .jsonPath("$deckDirection").isEqualTo(180);
+        mockMvc.perform(post("/restaurant")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""
+                        {
+                        "name": "test",
+                        "latitude": 50.0,
+                        "longitude": 60.0,
+                        "deckDirection": 180,
+                        "deckWidth": 180,
+                        "hasSun": true
+                        }
+                        """))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name").value("test"))
+                .andExpect(jsonPath("$.deckDirection").value(180));
 
     }
 

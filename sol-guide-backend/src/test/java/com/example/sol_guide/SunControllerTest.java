@@ -1,19 +1,19 @@
 package com.example.sol_guide;
 
-
-
+import com.example.sol_guide.controller.SunController;
 import com.example.sol_guide.model.Restaurant;
+import com.example.sol_guide.service.JwtService;
 import com.example.sol_guide.service.SunService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
-import tools.jackson.databind.ObjectMapper;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 
 import java.util.Optional;
+import tools.jackson.databind.ObjectMapper;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.ArgumentMatchers.any;
@@ -22,9 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
-@SpringBootTest
-@AutoConfigureMockMvc
+@WebMvcTest(SunController.class)
 public class SunControllerTest {
 
     @Autowired
@@ -32,6 +30,9 @@ public class SunControllerTest {
 
     @MockitoBean
     private SunService sunService;
+
+    @MockitoBean
+    private JwtService jwtService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -47,6 +48,7 @@ public class SunControllerTest {
     }
 
     @Test
+    @WithMockUser("ADMIN")
     public void testPostCreateRestaurant() throws Exception {
 
         Restaurant restaurant = new Restaurant(null, "Test", 50.0, 60.0, 180,180, false);
