@@ -22,7 +22,7 @@ jobs:
           --health-retries=5
     env:
       DB_URL: jdbc:mysql://localhost:3306/test_db
-      DB_USER: test_user
+      DB_USERNAME: test_user
       DB_PASSWORD: test_pass
     steps:
       - name: Print message on push
@@ -31,7 +31,7 @@ jobs:
       - name: Setup java
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
       - name: Wait for MYSQL image to be ready
         run: |
@@ -65,7 +65,7 @@ jobs:
           --health-retries=5
     env:
       DB_URL: jdbc:mysql://localhost:3306/test_db
-      DB_USER: test_user
+      DB_USERNAME: test_user
       DB_PASSWORD: test_pass
     steps:
       - name: Print message on pull_request
@@ -74,7 +74,7 @@ jobs:
       - name: Setup java
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
       - name: Wait for MYSQL image to be ready
         run: |
