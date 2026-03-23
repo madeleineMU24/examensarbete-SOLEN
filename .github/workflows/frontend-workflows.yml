@@ -1,15 +1,33 @@
 name: frontend workflow
-on:
-  push:
-    paths:
-      - 'sol-guide-frontend/**'
-  pull_request:
-    paths:
-      - 'sol-guide-frontend/**'
+on: [push, pull_request]
 
 jobs:
-  build-frontend:
-    runs-on: ubundtu-latest
+  on-push-action:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: sol-guide-frontend
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+  on-pull_request-action:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
 
     defaults:
       run:
