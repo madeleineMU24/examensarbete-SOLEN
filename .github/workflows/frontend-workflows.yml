@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-frontend:
-    runs-on: ubundtu-latest
+    runs-on: ubuntu-latest
 
     defaults:
       run:
