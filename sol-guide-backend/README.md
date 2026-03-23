@@ -46,6 +46,7 @@ I konfigurationen används miljövariabler för databasuppgifter:
 spring.datasource.url=${DB_URL}
 spring.datasource.username=${DB_USERNAME}
 spring.datasource.password=${DB_PASSWORD}
+jwt.secret=${JWT_SECRET}
 ```
 
 För att köra projektet behöver följande miljövariabler sättas lokalt:
@@ -53,6 +54,7 @@ För att köra projektet behöver följande miljövariabler sättas lokalt:
 DB_URL
 DB_USERNAME
 DB_PASSWORD
+JWT_SECRET
 ```
 
 **Kör projektet:** öppna [SolGuideApplication](src/main/java/com/example/sol_guide/SolGuideApplication.java)
