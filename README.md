@@ -67,4 +67,4 @@ Se [frontend-README](sol-guide-frontend/README.md)
 
 **Författare**
 
-Projektet utvecklades av Madeleine Thunholm som examensarbete inom utbildningen **Mjukvaruutvecklare** vid **Folkuniversitet**
+Projektet utvecklades av **Madeleine Thunholm** som examensarbete inom utbildningen **Mjukvaruutvecklare** vid **Folkuniversitet**
