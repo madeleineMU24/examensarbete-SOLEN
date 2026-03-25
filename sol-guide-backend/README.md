@@ -3,6 +3,7 @@
 
 ---
 **Beskrivning**<br>
+
 Backend-delen av Sölen ansvarar för logiken bakom applikationen, inklusive beräkning av solens position och hantering av
 API-förfrågningar från frontend.
 
@@ -74,7 +75,9 @@ och kör `main()`-metoden
 | DELETE  | /restaurant/{id}  | Radera restaurang med valt id    | Kräver "ADMIN"              |
 | POST    | /auth/login       | Genererar JWT-token för admin    | -                           |
 
+
 ---
+
 **Projektstruktur**
 ````
 src/
