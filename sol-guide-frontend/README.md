@@ -4,6 +4,7 @@
 ---
 
 **Beskrivning**<br>
+
 Frontend-delen av **Sölen** utgör applikationens användargränssnitt och gör det möjligt för användaren att interagera med systemet.
 
 Gränssnittet är utvecklat med JavaScript och React, med Node.js som utvecklingsmiljö. Frontend kommunicerar med backend 
