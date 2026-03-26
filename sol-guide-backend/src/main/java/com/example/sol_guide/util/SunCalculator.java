@@ -15,11 +15,13 @@ public class SunCalculator {
         int deckWidth = restaurant.getDeckWidth();
 
         int dayOfYear = time.getDayOfYear();
-        double hour = time.getHour() + time.getMinute() / 60;
+        double hour = time.getHour() + time.getMinute() / 60.0;
 
         double declination = 23.45 * Math.sin(Math.toRadians(360.0 *(284 + dayOfYear) / 365));
 
-        double hourAngle = 15 * (hour - 12);
+        double solarTime = hour + (longitude / 15.0);
+
+        double hourAngle = 15 * (solarTime - 12);
 
         double elevation = Math.toDegrees(
                 Math.asin(
