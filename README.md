@@ -68,3 +68,5 @@ Se [frontend-README](sol-guide-frontend/README.md)
 **Författare**
 
 Projektet utvecklades av **Madeleine Thunholm** som examensarbete inom utbildningen **Mjukvaruutvecklare** vid **Folkuniversitet**
+
+**UML-diagram** finns här för att titta och läsa: [UML-diagram](./docs/uml-diagram.svg)
